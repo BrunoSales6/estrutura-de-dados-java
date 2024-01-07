@@ -25,6 +25,16 @@ public class Vetor {
                 System.out.println("Vetor cheio");
             }
         }
+        public int tamanho(){
+            return this.tamanho;
+        }
+
+        public String busca(int posicao){
+            if(!(posicao>=0 && posicao<this.tamanho)){
+                throw new IllegalArgumentException("Posição inválida");
+            }
+            return this.elementos[posicao];
+        }
 
         public String toString(){
             StringBuilder st=new StringBuilder();
@@ -36,6 +46,15 @@ public class Vetor {
 
             return Arrays.toString(elementos);
 
+        }
+
+        public int buscar(String valor){
+            for(int c=0;c<tamanho;c++){
+                if(this.elementos[c].equals(valor)){
+                    return c;
+                }
+            }
+            return -1;
         }
 
 
