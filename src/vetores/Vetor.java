@@ -1,5 +1,7 @@
 package vetores;
 
+import java.util.Arrays;
+
 public class Vetor {
         private String [] elementos;
         private int tamanho=0;
@@ -22,6 +24,18 @@ public class Vetor {
             else{
                 System.out.println("Vetor cheio");
             }
+        }
+
+        public String toString(){
+            StringBuilder s=new StringBuilder();
+            s.append("[");
+            for(int c=0;c<tamanho-1;c++){
+                s.append(this.elementos[c]);
+                s.append(", ");
+            }
+
+            return Arrays.toString(elementos);
+
         }
 
 
