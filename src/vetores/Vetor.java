@@ -27,11 +27,11 @@ public class Vetor {
         }
 
         public String toString(){
-            StringBuilder s=new StringBuilder();
-            s.append("[");
+            StringBuilder st=new StringBuilder();
+            st.append("[");
             for(int c=0;c<tamanho-1;c++){
-                s.append(this.elementos[c]);
-                s.append(", ");
+                st.append(this.elementos[c]);
+                st.append(", ");
             }
 
             return Arrays.toString(elementos);
