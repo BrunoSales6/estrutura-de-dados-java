@@ -33,7 +33,7 @@ public class VetorGenerico<T> {
         return this.tamanho;
     }
 
-    public Object busca(int posicao){
+    public T obtem(int posicao){
         if(!(posicao>=0 && posicao<this.tamanho)){
             throw new IllegalArgumentException("Posição inválida");
         }
@@ -57,7 +57,7 @@ public class VetorGenerico<T> {
 
     }
 
-    public int buscar(Object valor){
+    public int buscar(T valor){
         for(int c=0;c<tamanho;c++){
             if(this.elementos[c].equals(valor)){
                 return c;
@@ -84,5 +84,32 @@ public class VetorGenerico<T> {
             this.elementos[c]=this.elementos[c+1];
         }
         this.tamanho--;
+    }
+    public void removeelemneto(T elemento){
+       int pos=buscar(elemento);
+       if(pos>-1){
+           this.removeelemento(pos);
+       }
+    }
+
+    public boolean contem(T elemento){
+        return buscar(elemento)>-1;
+    }
+
+    public int ultimoindex(T elemento){
+        int pos=-1;
+        for(int c=0;c<this.tamanho;c++){
+            if(elementos[c].equals(elemento)){
+                pos=c;
+            }
+        }
+        return pos;
+    }
+
+    public void limpar(){
+        for(int c=0;c<this.tamanho;c++){
+            elementos[c]=null;
+        }
+        this.tamanho=0;
     }
 }
